@@ -7,11 +7,7 @@ services:
     build: .
     restart: always
     volumes:
-      - type: bind
-        source: /home/pi/Documentos/foundryVTTData
-        target: /root/foundryVTTData
-      - type: bind
-        source: /home/pi/Documentos/foundryVTTSource
-        target: /root/foundryVTTSource
+      - /home/pi/Documentos/foundryVTTData:/root/foundryVTTData:rw
+      - /home/pi/Documentos/foundryVTTSource:/root/foundryVTTSource:rw
     ports: 
       - "443:30000"
