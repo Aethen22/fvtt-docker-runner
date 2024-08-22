@@ -12,10 +12,10 @@ services:
     image: forumi0721/alpine-vsftpd
     restart: always
     environment:
-      - USER_NAME: master
-      - USER_PASSWD: /run/secrets/ftp_password
-      - FTP_SHARE: /data
-      - FTP_BANNER: Welcome
+      USER_NAME: master
+      USER_PASSWD: /run/secrets/ftp_password
+      FTP_SHARE: /data
+      FTP_BANNER: Welcome
     ports:
       - "21:21"
     volumes: 
