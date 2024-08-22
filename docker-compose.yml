@@ -4,8 +4,7 @@ version: "0.1"
 services:
   foundry:
     image: foundry-docker
-    build:
-      context: .
+    build: .
     restart: always
     volumes:
       - type: bind
