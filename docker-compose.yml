@@ -1,6 +1,4 @@
 ---
-version: "0.1"
-
 services:
   foundry:
     build: .
@@ -11,15 +9,17 @@ services:
     ports: 
       - "443:30000"
   ftp:
-    image: fauria/vsftpd
+    image: forumi0721/alpine-vsftpd
     restart: always
     environment:
-      - FTP_USER="master"
-      - FTP_PASS=/run/secrets/ftp_password
+      - USER_NAME: "master"
+      - USER_PASSWD: /run/secrets/ftp_password
+      - FTP_SHARE: /data
+      - FTP_BANNER: "Welcome"
     ports:
       - "21:21"
     volumes: 
-      - ./foundryVTTData:/home/vsftpd
+      - ./foundryVTTData:/data/foundryData
     secrets:
       - ftp_password
 secrets:
