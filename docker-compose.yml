@@ -3,7 +3,6 @@ version: "0.1"
 
 services:
   foundry:
-    image: foundry-docker
     build: .
     restart: always
     volumes:
