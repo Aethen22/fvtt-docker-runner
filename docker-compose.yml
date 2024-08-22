@@ -17,7 +17,9 @@ services:
       FTP_SHARE: /data
       FTP_BANNER: Welcome
     ports:
+      - "20:20"
       - "21:21"
+      - "60000-60099:60000-60099"
     volumes: 
       - ./foundryVTTData:/data/foundryData
     secrets:
