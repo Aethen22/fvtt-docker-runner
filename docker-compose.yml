@@ -14,7 +14,7 @@ services:
     environment:
       - USER_NAME: "master"
       - USER_PASSWD: /run/secrets/ftp_password
-      - FTP_SHARE: /data
+      - FTP_SHARE: "/data"
       - FTP_BANNER: "Welcome"
     ports:
       - "21:21"
