@@ -1,6 +1,6 @@
 ### INTRODUCTION
 
-This is a simple docker-compose and dockerfile setup for starting Foundry VTT from volumes
+This is a simple docker-compose and dockerfile setup for starting Foundry VTT from volumes and a ftp server which serves it's data directory
 
 ## Why volumes?
 
@@ -12,6 +12,9 @@ Copy your FoundryVTT data folder into this folder under the name foundryVTTData
 
 Copy your FoundryVTT source folder into this folder under the name foundryVTTSource
 
+Create a file with the name `ftp_password`, which should contain only the ftp password, in linux you can do this via:
+`echo "YOUR_VERY_SECRET_PASSWORD_DONT_LET_IT_BE_POTATO_PLEASE" > ftp_password`
+
 Install docker and docker-compose, guide [here](https://docs.docker.com/compose/install/)
 
 Simply run `docker-compose up` and you're done, if you encounter any errors, these are surely related to foundry configuration
@@ -19,6 +22,8 @@ Simply run `docker-compose up` and you're done, if you encounter any errors, the
 ## Troubleshooting
 
 You need to have every configuration pointing towards the `/root/foundryVTTData` and `/root/foundryVTTSource` folders
+
+If the ftp server fails... well, it should not, if it does, good luck
 
 ## Details
 
