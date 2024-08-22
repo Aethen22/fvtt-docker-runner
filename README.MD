@@ -1,4 +1,4 @@
-# INTRODUCTION
+### INTRODUCTION
 
 This is a simple docker-compose and dockerfile setup for starting Foundry VTT from volumes
 
