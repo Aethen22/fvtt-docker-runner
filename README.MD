@@ -12,8 +12,7 @@ Copy your FoundryVTT data folder into this folder under the name foundryVTTData
 
 Copy your FoundryVTT source folder into this folder under the name foundryVTTSource
 
-Create a file with the name `ftp_password`, which should contain only the ftp password, in linux you can do this via:
-`echo "YOUR_VERY_SECRET_PASSWORD_DONT_LET_IT_BE_POTATO_PLEASE" > ftp_password`
+Change the value `YOUR_PASSWORD` in the docker-compose.yml file to a secure password
 
 Install docker and docker-compose, guide [here](https://docs.docker.com/compose/install/)
 
