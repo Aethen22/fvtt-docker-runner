@@ -14,7 +14,7 @@ services:
     image: fauria/vsftpd
     restart: always
     environment:
-      - FTP_USER: master
+      - FTP_USER: "master"
       - FTP_PASS: /run/secrets/ftp_password
     ports:
       - "21:21"
