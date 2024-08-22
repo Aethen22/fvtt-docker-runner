@@ -1,0 +1,21 @@
+---
+version: "0.1"
+
+services:
+  foundry:
+    image: foundry-docker
+    build:
+      context: .
+    restart: always
+    volumes:
+      - type: bind
+        source: /home/pi/Documentos/foundryVTTData
+        target: /root/foundryVTTData
+      - type: bind
+        source: /home/pi/Documentos/foundryVTTSource
+        target: /root/foundryVTTSource
+    ports:
+      - target: 30000
+        published: 443
+        protocol: tcp
+        mode: host
