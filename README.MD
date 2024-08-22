@@ -9,6 +9,7 @@ For persistence, anything done from foundry will be persisted into the volumes, 
 ## How do i use this?
 
 Copy your FoundryVTT data folder into this folder under the name foundryVTTData
+
 Copy your FoundryVTT source folder into this folder under the name foundryVTTSource
 
 Install docker and docker-compose, guide [here](https://docs.docker.com/compose/install/)
