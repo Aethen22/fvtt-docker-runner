@@ -12,7 +12,11 @@ Copy your FoundryVTT data folder into this folder under the name foundryVTTData
 
 Copy your FoundryVTT source folder into this folder under the name foundryVTTSource
 
+Set your foundry port(In foundryVTT configuration) to 30000
+
 Change the value `YOUR_PASSWORD` in the docker-compose.yml file to a secure password
+
+Open ports 20, 21, 443 and 60000 to 60099(60000-60099) to your host machine
 
 Install docker and docker-compose, guide [here](https://docs.docker.com/compose/install/)
 
