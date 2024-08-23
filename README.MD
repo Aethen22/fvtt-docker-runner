@@ -33,3 +33,23 @@ If the ftp server fails... well, it should not, if it does, good luck
 This docker-compose project starts automatically with docker, so you can have your server running 24/7(as long as docker starts automatically)
 
 This server is started on port 443, so, make sure that you use https and certificates, or else you will get errors, my recommendation is to use [letsencrypt](https://letsencrypt.org/)
+
+## Setting https up
+
+To setup https i recommend using letsencrypt(see above), after you setup letsencrypt, you need to copy the certificates into your foundry installation, for that i created a simple sh and service(which executes that sh correctly)
+
+To use it just modify the lines 5 and 6 on `copycerts.service.example`, specifically these parts:
+
+`/YOUR/REPOSITORY/LOCATION` to your repository location, so if you downloaded the repo on /home/user/fvtt-docker-runner, that should be there
+
+`YOUR_DNS_NAME` to your hostname, this is the external name used in both letsencrypt and whichever service you're using
+
+Copy the copycerts.service.example to /etc/systemd/system/copycerts.service via `cp copycerts.service.example /etc/systemd/system/copycerts.service`
+
+Reload the systemctl daemon via `systemctl daemon-reload`
+
+Enable the service via `systemctl enable copycerts.service`
+
+Run the service and make sure it works via `service copycerts start`
+
+If foundry is configured correctly, you should have https with certificates working
