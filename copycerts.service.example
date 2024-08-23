@@ -1,0 +1,12 @@
+[Unit]
+Description=CopyCertsService
+[Service]
+User=root
+WorkingDirectory=/YOUR/REPOSITORY/LOCATION
+ExecStart=bash ./copycerts.sh YOUR_DNS_NAME
+Type=oneshot
+RemainAfterExit=yes
+Restart=On-Failure
+RestartSec=3
+[Install]
+WantedBy=multi-user.target
