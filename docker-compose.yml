@@ -3,6 +3,7 @@ services:
   foundry:
     build: .
     restart: always
+    user: root
     volumes:
       - ./foundryVTTData:/root/foundryVTTData:rw
       - ./foundryVTTSource:/root/foundryVTTSource:rw
